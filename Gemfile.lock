@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/decioferreira/bootstrap-generators.git
+  revision: 52d3502a3b01cd6d4f4c01f9f97fe69feec03c0c
+  specs:
+    bootstrap-generators (3.3.1)
+      railties (>= 3.1.0)
+
+GIT
   remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
   revision: 1d93c5a77049b3d21d17c847ad0531d7714fa229
   branch: bootstrap3
@@ -52,6 +59,7 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
+    cancan (1.6.10)
     capybara (2.4.4)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -252,6 +260,8 @@ DEPENDENCIES
   bcrypt
   better_errors
   binding_of_caller
+  bootstrap-generators!
+  cancan
   capybara
   coffee-rails (~> 4.0.0)
   devise

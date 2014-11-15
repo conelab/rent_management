@@ -1,0 +1,38 @@
+<div class="page-header">
+  <%= link_to properties_path, :class => 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_property_path(@property), :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show property</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Company:</dt>
+  <dd><%= @property.company_id %></dd>
+
+  <dt>Name:</dt>
+  <dd><%= @property.name %></dd>
+
+  <dt>Address:</dt>
+  <dd><%= @property.address %></dd>
+
+  <dt>City:</dt>
+  <dd><%= @property.city %></dd>
+
+  <dt>Country:</dt>
+  <dd><%= @property.country %></dd>
+
+  <dt>Rent:</dt>
+  <dd><%= @property.rent %></dd>
+
+  <dt>Percent rent increase:</dt>
+  <dd><%= @property.percent_rent_increase %></dd>
+
+  <dt>Last increased:</dt>
+  <dd><%= @property.last_increased %></dd>
+
+</dl>

@@ -1,0 +1,47 @@
+<div class="page-header">
+  <%= link_to new_tennant_path, :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Tennant
+  <% end %>
+  <h1>Listing tennants</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Property</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Encrypted password</th>
+            <th>Email</th>
+            <th>Phone number</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Is active</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @tennants) do |tennant| %>
+            <td><%= tennant.property_id %></td>
+            <td><%= tennant.name %></td>
+            <td><%= tennant.username %></td>
+            <td><%= tennant.encrypted_password %></td>
+            <td><%= tennant.email %></td>
+            <td><%= tennant.phone_number %></td>
+            <td><%= tennant.address %></td>
+            <td><%= tennant.city %></td>
+            <td><%= tennant.country %></td>
+            <td><%= tennant.is_active %></td>
+            <td><%= link_to 'Show', tennant %></td>
+        <td><%= link_to 'Edit', edit_tennant_path(tennant) %></td>
+        <td><%= link_to 'Destroy', tennant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

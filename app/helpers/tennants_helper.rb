@@ -1,0 +1,2 @@
+module TennantsHelper
+end

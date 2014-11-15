@@ -1,0 +1,68 @@
+<%= form_for(@property, :html => { :class => "form-horizontal", :role => "form" }) do |f| %>
+  <% if @property.errors.any? %>
+    <div class="alert alert-danger alert-dismissable" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4><%= pluralize(@property.errors.count, "error") %> prohibited this property from being saved:</h4>
+
+      <ul>
+      <% @property.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :company_id, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.number_field :company_id, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :name, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :name, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :address, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :address, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :city, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :city, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :country, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :country, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :rent, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :rent, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :percent_rent_increase, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :percent_rent_increase, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :last_increased, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.datetime_select :last_increased, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit :class => "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

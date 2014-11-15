@@ -55,6 +55,9 @@ group :production do
   gem 'unicorn'
 end
 
+gem "cancan"
+gem 'bootstrap-generators', :git => 'git://github.com/decioferreira/bootstrap-generators.git'
+
 
 
 # Use ActiveModel has_secure_password

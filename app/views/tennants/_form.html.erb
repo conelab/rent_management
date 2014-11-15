@@ -1,0 +1,86 @@
+<%= form_for(@tennant, :html => { :class => "form-horizontal", :role => "form" }) do |f| %>
+  <% if @tennant.errors.any? %>
+    <div class="alert alert-danger alert-dismissable" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4><%= pluralize(@tennant.errors.count, "error") %> prohibited this tennant from being saved:</h4>
+
+      <ul>
+      <% @tennant.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :property_id, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.collection_select :property_id, Property.all, :id, :name, {:include_blank => true}, {:class => "form-control"} %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :name, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :name, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :username, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :username, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :password, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.password_field :password, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :email, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.email_field :email, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :security_deposit, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :security_deposit, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :phone_number, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :phone_number, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :address, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :address, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :city, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :city, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :country, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :country, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :is_active, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.check_box :is_active, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit :class => "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

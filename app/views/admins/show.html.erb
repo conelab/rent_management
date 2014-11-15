@@ -1,0 +1,23 @@
+<div class="page-header">
+  <%= link_to admins_path, :class => 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_admin_path(@admin), :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show admin</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Email:</dt>
+  <dd><%= @admin.email %></dd>
+
+  <dt>Name:</dt>
+  <dd><%= @admin.name %></dd>
+
+  <dt>Role:</dt>
+  <dd><%= @admin.role %></dd>
+
+</dl>

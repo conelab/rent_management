@@ -1,0 +1,43 @@
+<div class="page-header">
+  <%= link_to new_property_path, :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Property
+  <% end %>
+  <h1>Listing properties</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Company</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Rent</th>
+            <th>Percent rent increase</th>
+            <th>Last increased</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @properties) do |property| %>
+            <td><%= property.company_id %></td>
+            <td><%= property.name %></td>
+            <td><%= property.address %></td>
+            <td><%= property.city %></td>
+            <td><%= property.country %></td>
+            <td><%= property.rent %></td>
+            <td><%= property.percent_rent_increase %></td>
+            <td><%= property.last_increased %></td>
+            <td><%= link_to 'Show', property %></td>
+        <td><%= link_to 'Edit', edit_property_path(property) %></td>
+        <td><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>
