@@ -50,10 +50,10 @@ ActiveRecord::Schema.define(version: 20141115194207) do
   end
 
   create_table "invoices", force: true do |t|
-    t.float    "price",       default: 0.0
+    t.integer  "price",       default: 0
     t.integer  "tennant_id"
     t.integer  "property_id"
-    t.float    "amount_paid", default: 0.0
+    t.integer  "amount_paid", default: 0
     t.integer  "status",      default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -65,9 +65,10 @@ ActiveRecord::Schema.define(version: 20141115194207) do
     t.string   "address"
     t.string   "city"
     t.string   "country"
-    t.float    "rent",                  default: 0.0
+    t.integer  "rent",                  default: 0
     t.float    "percent_rent_increase", default: 10.0
-    t.datetime "last_increased",        default: '2014-11-15 20:31:08'
+    t.integer  "increase_method",       default: 0
+    t.datetime "last_increased",        default: '2014-11-15 21:02:13'
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -82,7 +83,7 @@ ActiveRecord::Schema.define(version: 20141115194207) do
     t.string   "address"
     t.string   "city"
     t.string   "country"
-    t.float    "security_deposit",   default: 0.0
+    t.integer  "security_deposit",   default: 0
     t.boolean  "is_active",          default: true
     t.datetime "created_at"
     t.datetime "updated_at"

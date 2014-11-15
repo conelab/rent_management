@@ -18,9 +18,7 @@
             <th>Rent</th>
             <th>Percent rent increase</th>
             <th>Last increased</th>
-            <th></th>
-        <th></th>
-        <th></th>
+            <th>Actions</th>
       </tr>
     </thead>
 
@@ -33,10 +31,12 @@
             <td><%= property.country %></td>
             <td><%= property.rent %></td>
             <td><%= property.percent_rent_increase %></td>
-            <td><%= property.last_increased %></td>
-            <td><%= link_to 'Show', property %></td>
-        <td><%= link_to 'Edit', edit_property_path(property) %></td>
-        <td><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= property.last_increased.to_s %></td>
+            <td>
+              <%= link_to 'Show', property %><br />
+              <%= link_to 'Edit', edit_property_path(property) %><br />
+              <%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </td>
       <% end %>
     </tbody>
   </table>

@@ -7,7 +7,7 @@
     <span class="glyphicon glyphicon-pencil"></span>
     Edit
   <% end %>
-  <h1>Show company</h1>
+  <h1>Company Detail</h1>
 </div>
 
 <dl class="dl-horizontal">
@@ -15,7 +15,7 @@
   <dd><%= @company.name %></dd>
 
   <dt>Logo:</dt>
-  <dd><%= @company.logo %></dd>
+  <dd><%= image_tag @company.logo.url(:medium) %></dd>
 
   <dt>Address:</dt>
   <dd><%= @company.address %></dd>

@@ -15,7 +15,7 @@
   <div class="form-group">
     <%= f.label :company_id, :class => "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <%= f.number_field :company_id, :class => "form-control" %>
+      <%= f.collection_select :company_id, Company.all, :id, :name, {:include_blank => true}, {:class => "form-control"} %>
     </div>
   </div>
   <div class="form-group">
@@ -45,13 +45,19 @@
   <div class="form-group">
     <%= f.label :rent, :class => "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <%= f.text_field :rent, :class => "form-control" %>
+      <%= f.number_field :rent, :class => "form-control" %>
     </div>
   </div>
   <div class="form-group">
     <%= f.label :percent_rent_increase, :class => "col-sm-2 control-label" %>
     <div class="col-sm-10">
       <%= f.text_field :percent_rent_increase, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :increase_method, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.select :increase_method, Property.methods,{:include_blank => true}, {:class => "form-control"} %>
     </div>
   </div>
   <div class="form-group">

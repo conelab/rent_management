@@ -21,5 +21,6 @@ module RentalManagement
     # config.i18n.default_locale = :de
    config.assets.initialize_on_precompile = false
    ::BCRYPT_SALT = "$2a$90$e/2DSUf8Q3gr5L.bmu4IkO"
+   ::CURRENCY = "Rs."
   end
 end

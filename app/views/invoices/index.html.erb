@@ -10,27 +10,29 @@
   <table class="table table-striped table-bordered table-hover">
     <thead>
       <tr>
-            <th>Price</th>
             <th>Tennant</th>
             <th>Property</th>
             <th>Amount paid</th>
+            <th>Price</th>
             <th>Status</th>
-            <th></th>
-        <th></th>
-        <th></th>
+            <th>Actions</th>
       </tr>
     </thead>
 
     <tbody>
-      <%= content_tag_for(:tr, @invoices) do |invoice| %>
-            <td><%= invoice.price %></td>
-            <td><%= invoice.tennant_id %></td>
-            <td><%= invoice.property_id %></td>
-            <td><%= invoice.amount_paid %></td>
-            <td><%= invoice.status %></td>
-            <td><%= link_to 'Show', invoice %></td>
-        <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
-        <td><%= link_to 'Destroy', invoice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% @invoices.each do |invoice| %>
+          <tr class="<%= invoice.row_class %>">
+            <td><%= invoice.tennant.name %></td>
+            <td><%= invoice.property.name %></td>
+            <td><%= number_to_currency invoice.amount_paid %></td>
+            <td><%= number_to_currency invoice.price %></td>
+            <td><%= invoice.status_text %></td>
+            <td>
+              <%= link_to 'Show', invoice %><br />
+              <%= link_to 'Edit', edit_invoice_path(invoice) %><br />
+              <%= link_to 'Destroy', invoice, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </td>
+          </tr>
       <% end %>
     </tbody>
   </table>

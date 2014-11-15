@@ -12,18 +12,18 @@
 
 <dl class="dl-horizontal">
   <dt>Price:</dt>
-  <dd><%= @invoice.price %></dd>
+  <dd><%= number_to_currency @invoice.price %></dd>
 
   <dt>Tennant:</dt>
-  <dd><%= @invoice.tennant_id %></dd>
+  <dd><%= @invoice.tennant.name %></dd>
 
   <dt>Property:</dt>
-  <dd><%= @invoice.property_id %></dd>
+  <dd><%= @invoice.property.name %></dd>
 
   <dt>Amount paid:</dt>
-  <dd><%= @invoice.amount_paid %></dd>
+  <dd><%= number_to_currency @invoice.amount_paid %></dd>
 
   <dt>Status:</dt>
-  <dd><%= @invoice.status %></dd>
+  <dd><%= @invoice.status_text %></dd>
 
 </dl>
